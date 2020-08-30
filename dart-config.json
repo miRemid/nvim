@@ -1,0 +1,13 @@
+ "dart": {
+      "command": "dart",
+      "args": [
+        "/home/mio/development/flutter/bin/cache/dart-sdk/bin/snapshots/analysis_server.dart.snapshot",
+        "--lsp",
+        "--client-id",
+        "vim",
+        "--client-version",
+        "coc.nvim"
+      ],
+      "filetypes": ["dart"],
+      "trace.server": "verbose"
+    }
