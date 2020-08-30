@@ -7,6 +7,7 @@ Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'ryanoasis/vim-devicons'
 Plug 'dart-lang/dart-vim-plugin'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 call plug#end()
 
 " normal config
@@ -217,3 +218,14 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " vim-dart-config
 let dart_html_in_string=v:true
+
+
+
+" markdown config
+"
+" mapping
+
+" example
+nmap <C-s> <Plug>MarkdownPreview
+nmap <M-s> <Plug>MarkdownPreviewStop
+nmap <C-p> <Plug>MarkdownPreviewToggle
