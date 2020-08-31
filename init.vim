@@ -8,14 +8,17 @@ Plug 'vim-airline/vim-airline'
 Plug 'ryanoasis/vim-devicons'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'majutsushi/tagbar'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
+
 
 " normal config
 set number
 set relativenumber
 set cursorline
 set noexpandtab
-set tabstop=2
+set tabstop=4
 set shiftwidth=4 expandtab
 set autoindent
 set list
@@ -71,7 +74,8 @@ let g:airline_theme='badwolf'
 set encoding=utf8
 set guifont=Droid\ Sans\ Mono\ Nerd\ Font\ Complete\ 11
 let g:airline_powerline_fonts=1
-
+let NERDTreeMinimalUI=1
+let NERDTreeDirArrows=1
 
 
 
@@ -229,3 +233,34 @@ let dart_html_in_string=v:true
 nmap <C-s> <Plug>MarkdownPreview
 nmap <M-s> <Plug>MarkdownPreviewStop
 nmap <C-p> <Plug>MarkdownPreviewToggle
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>
+
+let g:tagbar_type_go = {
+	\ 'ctagstype' : 'go',
+	\ 'kinds'     : [
+		\ 'p:package',
+		\ 'i:imports:1',
+		\ 'c:constants',
+		\ 'v:variables',
+		\ 't:types',
+		\ 'n:interfaces',
+		\ 'w:fields',
+		\ 'e:embedded',
+		\ 'm:methods',
+		\ 'r:constructor',
+		\ 'f:functions'
+	\ ],
+	\ 'sro' : '.',
+	\ 'kind2scope' : {
+		\ 't' : 'ctype',
+		\ 'n' : 'ntype'
+	\ },
+	\ 'scope2kind' : {
+		\ 'ctype' : 't',
+		\ 'ntype' : 'n'
+	\ },
+	\ 'ctagsbin'  : 'gotags',
+	\ 'ctagsargs' : '-sort -silent'
+\ }
